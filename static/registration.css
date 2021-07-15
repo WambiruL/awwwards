@@ -1,0 +1,17 @@
+.card{
+    width: 700px;
+    position: relative;
+    left: 150px;
+    background-color: whitesmoke;
+    
+}
+button{
+    height: 60px;
+    width: 400px;
+    position: relative;
+    left: 100px;
+    background-color: aqua;
+}
+button:hover{
+    background-color:darkcyan;
+}
