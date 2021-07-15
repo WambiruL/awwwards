@@ -1,0 +1,30 @@
+{%extends "registration/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="container-log mt-4">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5 mt-4">
+            <div class="card" style="text-align: center;">
+                <br>
+                <div class="card-title">
+                    <p><strong>Sign in to continue</strong></p>
+                </div>
+                <p style="text-align: center;">Not a member yet? <a href="{%url 'register'%}">Register now</a></p>
+                <div class="card-body">
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <br>   
+                    </form>
+                   
+                </div>
+                <button type="submit" class="btn btn" style="position: relative; left: 130px;"> LOGIN NOW</button>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock %}

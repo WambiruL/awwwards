@@ -3,6 +3,7 @@
     position: relative;
     left: 150px;
     background-color: whitesmoke;
+    padding: 20px;
     
 }
 button{
@@ -15,3 +16,4 @@ button{
 button:hover{
     background-color:darkcyan;
 }
+

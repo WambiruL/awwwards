@@ -15,3 +15,8 @@ h4{
     justify-content: space-between;
     font-size: 15px;
 }
+.nav2{
+    background-color: coral;
+    display: flex;
+    justify-content: space-between;
+}
