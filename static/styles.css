@@ -1,0 +1,17 @@
+.nav1{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+}
+h4{
+    font-size: 15px;
+    position: relative;
+    left: 550px;
+    
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}

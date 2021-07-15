@@ -1,0 +1,33 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% block styles %}
+{% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+{% endblock %}
+  
+{% block content %}
+
+<!--Navbar1-->
+<nav class="nav1">
+    <h4>The award of design,creativity and innovation on the internet</h4>
+
+    <div class="icons">
+        <a class="nav-item nav-link ml-auto social" href="https://www.instagram.com/awwwards/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="nav-item nav-link ml-auto social" href="https://twitter.com/awwwards" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="nav-item nav-link ml-auto social" href="https://www.facebook.com/awwwards/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+</nav>
+
+<!--Navbar-->
+<nav class="nav2 navbar-expand-lg">
+    <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><h3><strong>awwwards.</strong></h3></a>
+
+    <div class="login">
+        <a href="{%url 'register'%}">Register</a>
+    </div>
+
+</nav>
+{%endblock%}

@@ -14,3 +14,6 @@ def registerPage(request):
 
     context={'form':form}
     return render(request,'registration/registration_form.html',context)
+
+def index(request):
+    return render(request,'index.html')
