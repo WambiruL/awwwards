@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
-from .forms import CreateUserForm, UserUpdateForm,ProfleUpdateForm
+from .forms import CreateUserForm, UserUpdateForm,ProfleUpdateForm,ProjectUploadForm
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile,Projects
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -18,9 +18,12 @@ def registerPage(request):
     context={'form':form}
     return render(request,'registration/registration_form.html',context)
 
+
 @login_required(login_url='/accounts/login')
 def index(request):
-    return render(request,'index.html')
+    projects = Projects.objects.all()
+    return render(request,'index.html', {'projects':projects})
+
 
 def profileView(request):
     logged_in_user=request.user #logged in user
@@ -46,5 +49,20 @@ def profileView(request):
     }
    
     return render(request,'profile.html',ctx)
+
+
+def submit_site(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProjectUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            home = form.save(commit=False)
+            home.profile =current_user
+            form.save()
+        return redirect('index')
+    else:
+        form =ProjectUploadForm()
+            
+    return render(request,'new_project.html',{"form":form,})
 
 

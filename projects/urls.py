@@ -10,6 +10,6 @@ urlpatterns=[
     url(r'profile/', project_views.profileView,name='profile'),
     url(r'logout/',auth_views.LogoutView.as_view(),name='logout',),
     url(r'^$',views.index,name = 'index'),
-    
+    url(r'^projects/',project_views.submit_site,name='submit_site')
    
 ]
