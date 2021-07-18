@@ -32,7 +32,7 @@
         <a href="{%url 'register'%}">Register</a>
         <a href="{%url 'login'%}">Login</a>
     </div>
-    <a href=""><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
+    <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
 
 </nav>
 
@@ -51,7 +51,7 @@
     <div class="container">
         <h2>TOP SITES</h2>
         <div class="row">
-            {% for project in projects %}
+            {% for project in myProjects %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
                     <div class="card-body">
@@ -65,13 +65,13 @@
                     </div>  
                 </div> 
             </div>     
-            {% endfor %}  
-
+            {% endfor %} 
         </div>
+
+        <div class="footer"></div>
     </div>
 
-
-       
+    
 </body>
 {%endblock%}
 

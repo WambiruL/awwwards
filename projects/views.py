@@ -21,8 +21,8 @@ def registerPage(request):
 
 @login_required(login_url='/accounts/login')
 def index(request):
-    projects = Projects.objects.all()
-    return render(request,'index.html', {'projects':projects})
+    myProjects = Projects.objects.all()
+    return render(request,'index.html', {'myProjects':myProjects})
 
 
 def profileView(request):
@@ -51,7 +51,7 @@ def profileView(request):
     return render(request,'profile.html',ctx)
 
 
-def submit_site(request):
+def submitSite(request):
     current_user = request.user
     if request.method == 'POST':
         form = ProjectUploadForm(request.POST, request.FILES)
