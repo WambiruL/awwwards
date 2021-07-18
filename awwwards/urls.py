@@ -23,7 +23,7 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'',include('projects.urls')),
-    url(r'^logout/$', views.logout, {"next_page": '/login'}),
+    url(r'^logout/$', views.logout, {"next_page":'accounts/login'}),
 ]
 
 if settings.DEBUG:

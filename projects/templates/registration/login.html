@@ -16,11 +16,13 @@
                     <form action="" method="post" novalidate>
                         {% csrf_token %}
                         {{form|crispy}}
-                        <br>   
+                        <br>
+                        
+                        <button type="submit" class="btn btn" style="position: relative; left: 30px;"> LOGIN NOW</button>
                     </form>
                    
                 </div>
-                <button type="submit" class="btn btn" style="position: relative; left: 130px;"> LOGIN NOW</button>
+               
             </div>
         </div>
         <div class="col-md-2"></div>

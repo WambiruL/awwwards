@@ -4,6 +4,9 @@
     justify-content: space-between;
     background-color: bisque;
 }
+body{
+    font-family: 'Rye', cursive;
+}
 h4{
     font-size: 15px;
     position: relative;
@@ -16,7 +19,12 @@ h4{
     font-size: 15px;
 }
 .nav2{
-    background-color: coral;
+    background-color: turquoise;
     display: flex;
     justify-content: space-between;
+    height: 70px;
+}
+
+img{
+    width: 150px;
 }

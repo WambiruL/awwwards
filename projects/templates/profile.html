@@ -1,0 +1,9 @@
+{%extends 'index.html'%}
+{%block content%}
+<br>
+<img class="rounded-circle account-img" style="width: 100px;" src="{{user.profile_image.url}}">
+<h2 class="account-heading">{{user}}</h2>
+BIO:{{user.bio}}
+<p class="text-secondary">{{user.email}}</p>
+
+{%endblock%}

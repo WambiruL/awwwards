@@ -2,7 +2,7 @@
     width: 700px;
     position: relative;
     left: 150px;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 20px;
     
 }
@@ -15,5 +15,9 @@ button{
 }
 button:hover{
     background-color:darkcyan;
+}
+body{
+    background-color: turquoise;
+    font-family: 'Rye', cursive;
 }
 
