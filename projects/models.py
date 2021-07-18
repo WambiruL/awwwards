@@ -9,7 +9,7 @@ from django.dispatch import receiver
 class UserProfile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     profile_image=models.ImageField(default='default.jpeg', upload_to='Profilepics/')
-    user_name=models.CharField(max_length=300,null=True)
+    username=models.CharField(max_length=300,null=True)
     bio=models.CharField(max_length=1000,null=True, default="My Bio")
     location=models.CharField(max_length=200, null=True)
 
