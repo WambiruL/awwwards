@@ -19,7 +19,7 @@ h4{
     font-size: 15px;
 }
 .nav2{
-    background-color: turquoise;
+    background-color: whitesmoke;
     display: flex;
     justify-content: space-between;
     height: 70px;
@@ -34,4 +34,45 @@ img{
     position: relative;
     left: 550px;
     text-align: center;
+}
+.intro{
+    background-image:url('./Images/775.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 1525px;
+    height: 500px;
+    color: blanchedalmond;
+}
+.logos{
+    width: 250px;
+    text-align: center;
+}
+
+#one{
+    position: relative;
+    left: 50px;
+    top: 200px;
+}
+
+#one:hover{
+    background-color: #F44336;
+}
+
+#two{
+    position: relative;
+    left: 600px;
+    top: 100px;
+}
+#two:hover{
+    background-color: #FFA726;
+}
+
+#three{
+    position: relative;
+    left: 1200px;
+    
+}
+#three:hover{
+    background-color: #00ACC1;
 }
