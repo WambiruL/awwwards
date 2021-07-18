@@ -1,9 +1,14 @@
 {%extends 'index.html'%}
+{% load crispy_forms_tags %}
 {%block content%}
-<br>
-<img class="rounded-circle account-img" style="width: 100px;" src="{{user.profile_image.url}}">
-<h2 class="account-heading">{{user}}</h2>
-BIO:{{user.bio}}
-<p class="text-secondary">{{user.email}}</p>
-
+<div class="section">
+    <br>
+    <h2 class="account-heading">{{user}}</h2>
+    <img class="rounded-circle account-img" style="width: 150px; height: 100px;" src="{{user.profile_image.url}}">
+    <p>USERNAME:{{user.user_name}}</p>
+    <p>BIO:{{user.bio}}</p>
+    <p>From:{{user.location}}</p>
+    <p class="text-secondary">{{user.email}}</p>
+</div>
+<hr>
 {%endblock%}

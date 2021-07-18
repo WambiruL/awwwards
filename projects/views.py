@@ -30,3 +30,6 @@ def profileView(request):
         "user":user
     }
     return render(request,'profile.html',ctx)
+
+
+
