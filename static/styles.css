@@ -6,6 +6,7 @@
 }
 body{
     font-family: 'Rye', cursive;
+    background-color: whitesmoke;
 }
 h4{
     font-size: 15px;
@@ -23,7 +24,11 @@ h4{
     display: flex;
     justify-content: space-between;
     height: 70px;
+    position:-webkit-sticky;
+	position: sticky;
+	top: 0;
 }
+
 
 img{
     width: 150px;
@@ -75,4 +80,7 @@ img{
 }
 #three:hover{
     background-color: #00ACC1;
+}
+.container{
+
 }

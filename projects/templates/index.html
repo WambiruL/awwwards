@@ -38,16 +38,43 @@
 
 <body>
     <!--First jumbo-->
-    <div class="intro" style="position: relative;">             
+    <div class="intro" >             
             <h3></h3>
            <p class="logos white-text " id="one" style="padding: 20px; border: 2px solid #F44336;border-radius:200px;font-weight:bolder;font-size: 30px;">DESIGN</p>
            <p class="logos white-text "  id="two"  style="padding: 20px; border: 2px solid #FFA726;border-radius:200px;font-weight:bolder; font-size: 30px;">USABILITY</p>
            <p class="logos white-text " id="three" style="padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">CONTENT</p>
        
     </div>
+    <br>
+    <!--display projects-->
+    
+    <div class="container">
+        <h2>TOP SITES</h2>
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
+                    <div class="card-body">
+                        <img class="card-img-top"src = "{{ project.image_landing.url }}" style="height:200px;"/>
+                        <br><br>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Posted : {{project.pub_date|date:"F d,Y"}}</small>
+                        </div>
+                        <a href=""><h5 class="strong-text"> <strong>{{project.title}}</strong> </h5> </a> <hr class="bg-info">
+                        <a href="{%url 'profile'%}"><h6>By:{{project.profile}}</h6></a>
+                    </div>  
+                </div> 
+            </div>     
+            {% endfor %}  
 
+        </div>
+    </div>
+
+
+       
 </body>
 {%endblock%}
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
