@@ -7,11 +7,12 @@ An application that will allow a user to post a project he/she has created and g
 
 2.git clone https://github.com/WambiruL/awwwards.git
 
-3 cd aaawards
+3 cd awwwards
 
 4.code . or atom . based on the text editor you have.
 
 ## Live demo
+https://rate-awwwards.herokuapp.com/
 
 ## Running the Application
 Creating the virtual environment
