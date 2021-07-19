@@ -28,6 +28,7 @@ def index(request):
 def profileView(request):
     logged_in_user=request.user #logged in user
     user=UserProfile.objects.get(user=logged_in_user)
+    myProjects = Projects.objects.filter(profile=request.user)
     print(user)
     
     if request.method=='POST':
@@ -44,6 +45,7 @@ def profileView(request):
         p_form=ProfleUpdateForm(instance=request.user.userprofile)
     ctx={
         "user":user,
+        "myProjects":myProjects,
         'u_form':u_form,
         'p_form':p_form
     }

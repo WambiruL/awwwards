@@ -5,24 +5,29 @@
     <div class="col-md-4">
 
     </div>
-    <div class="col-md-6">
-        <div class="card card-cascade  wider text-center">
-            <div class="card-body card-body-cascade ">
-                <h1 class="  text-center blue-text">Upload Site</h1> <br>
+    <div class="col-md-5">
+        <div class="card text-center" style="position: relative; right: 30px;">
+            <div class="card-body">
+                <h1 class="text-center">Upload Site</h1><br>
                 <br>
-                <form action="{% url 'new_project' % }" method="POST" style="color:#757575;" enctype="multipart/form-data">
+                <marquee direction="up" scrollamount='2' style="position: relative; right: 200px; font-size: 30px;">POST IT!</marquee>
+                <marquee direction="up" scrollamount='2' style="position: relative; left: 650px; bottom: 30px; font-size: 30px;">POST IT!</marquee>
+                <form action="{% url 'new_project' % }" method="POST" style="color:peru;" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% bootstrap_form form %}
-        
                         <div class=" form-group">
-                            <input type="submit" class="btn btn-pink btn-md text-center" value="Upload" style="text-align:center;">
+                            <input type="submit" class="btn btn-primary text-center" value="Upload" style="text-align:center;">
                         </div>
                         {{form.media}}
                 </form>
+                <marquee direction="up" scrollamount='2' style="position: relative; right: 200px; font-size: 30px;">POST IT!</marquee>
+                <marquee direction="up" scrollamount='2' style="position: relative; left: 650px; font-size: 30px; bottom: 40px;">POST IT!</marquee>
             </div>
 
         </div>
+       
     </div>
+   
 </div>
 
 {%endblock%}

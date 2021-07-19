@@ -29,8 +29,8 @@
 
     <div class="login">
         <a href="{%url 'profile'%}">MY PROFILE</a>
-        <a href="{%url 'register'%}">Register</a>
-        <a href="{%url 'login'%}">Login</a>
+        <a href="{%url 'register'%}" style="position: relative; left: 40px;">Register</a>
+        <a href="{%url 'login'%}"style="position: relative; left: 60px;">Login</a>
     </div>
     <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
 
@@ -49,7 +49,7 @@
     <!--display projects-->
     
     <div class="container">
-        <h2>TOP SITES</h2>
+        <h2 style="text-align: center; font-size: 50px;">TOP SITES</h2>
         <div class="row">
             {% for project in myProjects %}
             <div class="col-md-4">
