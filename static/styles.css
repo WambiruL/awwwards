@@ -86,4 +86,31 @@ img{
 .btn-info{
     background-color: #100e17;
 }
+.jumbotron{
+    height:300px ;
+    background-color: white;
+}
+.cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 450px;
+    font-weight: 400;
+    color: black;
+}
+.socials{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+}
+.img{
+    position: relative;
+    left: 1000px;
+    bottom: 150px;
+}
 

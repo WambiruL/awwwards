@@ -45,7 +45,7 @@
             </div>
         </form>
     </div>
-    <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
+    <a class="navbar-brand" style="color: black; position: relative; top: 40px; right: 400px;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
     <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
 
 </nav>
@@ -81,12 +81,36 @@
             </div>     
             {% endfor %} 
         </div>
-
-        <div class="footer"></div>
+    </div>
+    </body>
+    <div class="footer">
+        <div class="jumbotron">
+            <p>The awards for design, creativity and innovation on the Internet.</p> 
+            <div class="cont">
+               <strong><a href="https://www.awwwards.com/academy/"><p style="color: black;">Web design Courses</p></a></strong>
+                <strong><a href="https://www.awwwards.com/jobs/"><p style="color: black;">Jobs</p></a></strong>
+                <strong><a href="https://www.awwwards.com/about-us/"><p style="color: black;">About Us</p></a></strong>
+                <strong><a href="https://www.awwwards.com/blog/"><p style="color: black;">Blog</p></a></strong>
+            </div>
+            <div class="socials">
+                <strong><p>Follow us</p></strong>
+                <div class="icons">
+                    <a href="https://twitter.com/awwwards"><p style="color: black;">Twitter</p></a>
+                    <a href="https://www.facebook.com/awwwards/"><p style="color: black;">Facebook</p></a>
+                    <a href="https://www.youtube.com/channel/UCYWGYef22gx8PaXZMLHAQsw?sub_confirmation=1"><p style="color: black;">You tube</p></a>
+                    <a href="https://www.instagram.com/awwwards"><p style="color: black;">Instagram</p></a>
+                    <a href="https://www.instagram.com/awwwards"><p style="color: black;">LinkedIn</p></a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="/static/Images/Thank-You-gif-Free.gif" style="width: 300px;">
+            </div>
+        </div>
+        <p style="text-align: center;">Copyright &#169; Lorraine Wambui</p>
     </div>
 
     
-</body>
+
 {%endblock%}
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

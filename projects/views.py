@@ -83,4 +83,3 @@ def search_results(request):
 
         return render(request, 'search.html', {'message':message})
 
-
