@@ -27,13 +27,23 @@
 
     <div class="login">
         {%if user.is_authenticated%}
-        <p>Hello,{{user.username}}</p>
-        <a href="{%url 'profile'%}"><button class="btn btn-secondary" style="position: relative; top: 30px; right: 110px; height: 30px;">VIEW YOUR PROFILE</button></a>
-        <p><a href="{%url 'logout'%}" style="position: relative; left: 900px;">Logout</a></p>
+        <p>Hello,<span style='color:blue; font-size: 30px;'>{{user.username}}</span></p>
+        <a href="{%url 'profile'%}"><button class="btn btn-danger" style="position: relative; top: 50px; right: 130px; height: 30px;">VIEW YOUR PROFILE</button></a>
+        <p><a href="{%url 'logout'%}" style="position: relative; left: 850px;">Logout</a></p>
         {%else%}
         <a href="{%url 'register'%}" style="position: relative; left: 40px;">Register</a>
         <a href="{%url 'login'%}"style="position: relative; left: 60px;">Login</a>
         {%endif%}
+    </div>
+    <div class="col-sm-4 col-md-4 navbar-right">
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search For Inspiration" name="projects">
+                <div class="input-group-btn">
+                    <button class="btn btn-info" type="submit" style="width: 80px; height: 30px; text-align: center;">Search</button>
+                </div>
+            </div>
+        </form>
     </div>
     <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
     <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>

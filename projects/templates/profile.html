@@ -2,19 +2,6 @@
 {% load crispy_forms_tags %}
 {%load bootstrap4%}
 {%block content%}
-<!--Navbar-->
-<nav class="nav2 navbar-expand-lg">
-    <a href="{%url 'logout'%}">Logout</a>
-    <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
-
-    <div class="login">
-        <a href="{%url 'profile'%}">MY PROFILE</a>
-        <a href="{%url 'register'%}" style="position: relative; left: 40px;">Register</a>
-        <a href="{%url 'login'%}"style="position: relative; left: 60px;">Login</a>
-    </div>
-    <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
-    
-</nav>
 
 <div class="section">
     <br>
@@ -55,9 +42,7 @@
                 </div>
                 <div class="card-body"> 
                     <img src="{{project.image_landing.url}}" alt="" style="width: 435px; border-radius: 50px; text-align: center;" height="360px">
-                </div>
-                <div class="card-footer" style="background-color: #100e17;">
-                  <a href="{{project.link}}" style="position: relative; left: 150px; color: white;"><button class="btn btn-info">VIEW SITE</button></a>
+                    <a href="{{project.link}}" style="position: relative; left: 150px; color: white;"><button class="btn btn-info">VIEW SITE</button></a>
                 </div>
             </div> 
             <br><br><br>              

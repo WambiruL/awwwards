@@ -23,7 +23,7 @@ h4{
     background-color: powderblue;
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 90px;
 }
 .login{
     display: flex;
@@ -48,7 +48,7 @@ img{
     background-size: cover;
     width: 1525px;
     height: 500px;
-    color: blanchedalmond;
+    color: black;
 }
 .logos{
     width: 250px;
@@ -83,4 +83,7 @@ img{
     background-color: #00ACC1;
 }
 
+.btn-info{
+    background-color: #100e17;
+}
 

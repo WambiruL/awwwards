@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import CreateUserForm, UserUpdateForm,ProfleUpdateForm,ProjectUploadForm
 from django.contrib.auth.models import User
 from .models import UserProfile,Projects
+from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -19,7 +20,7 @@ def registerPage(request):
     return render(request,'registration/registration_form.html',context)
 
 
-@login_required(login_url='/accounts/login')
+
 def index(request):
     myProjects = Projects.objects.all()
     return render(request,'index.html', {'myProjects':myProjects})
@@ -52,7 +53,7 @@ def profileView(request):
    
     return render(request,'profile.html',ctx)
 
-
+@login_required(login_url='/accounts/login')
 def submitSite(request):
     current_user = request.user
     if request.method == 'POST':
@@ -66,5 +67,20 @@ def submitSite(request):
         form =ProjectUploadForm()
             
     return render(request,'new_project.html',{"form":form,})
+
+
+def search_results(request):
+
+    if 'projects' in request.GET and request.GET["projects"]:
+        search_term = request.GET.get("projects")
+        searched_projects = Projects.search_by_projects(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"projects": searched_projects})
+
+    else:
+        message="You can have not searched for anything"
+
+        return render(request, 'search.html', {'message':message})
 
 

@@ -16,7 +16,8 @@
                         {% csrf_token %}
                         {% bootstrap_form form %}
                         <div class=" form-group">
-                            <input type="submit" class="btn btn-primary text-center" value="Upload" style="text-align:center;">
+                            <input type="submit" class="btn btn-primary text-center" value="Upload" style="text-align:center;"><br><br>
+                            <a href="{%url 'index'%}"><button class="btn btn-danger">BACK HOME</button></a>
                         </div>
                         {{form.media}}
                 </form>
@@ -27,6 +28,7 @@
         </div>
        
     </div>
+    
    
 </div>
 
