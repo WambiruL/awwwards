@@ -7,6 +7,11 @@
 body{
     font-family: 'Rye', cursive;
     background-color: whitesmoke;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-x: hidden;
 }
 h4{
     font-size: 15px;
@@ -24,6 +29,7 @@ h4{
     display: flex;
     justify-content: space-between;
     height: 90px;
+    width: 100%;
 }
 .login{
     display: flex;
@@ -46,7 +52,7 @@ img{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 1525px;
+    width: 1515px;
     height: 500px;
     color: black;
 }
@@ -103,7 +109,7 @@ img{
     justify-content: space-between;
     width: 600px;
 }
-.icons{
+.links{
     display: flex;
     justify-content: space-between;
     width: 450px;

@@ -4,6 +4,11 @@ from django.contrib.auth.models import User
 from .models import UserProfile,Projects
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+from .permissions import IsAdminOrReadOnly
+from .serializer import UserProfileSerializer,ProjectsSerializer
 
 # Create your views here.
 def registerPage(request):
@@ -83,3 +88,31 @@ def search_results(request):
 
         return render(request, 'search.html', {'message':message})
 
+class UserProfileList(APIView):
+    permission_classes = (IsAdminOrReadOnly,)
+    def get(self,request,format=None):
+        all_profiles = UserProfile.objects.all()
+        serializers = UserProfileSerializer(all_profiles,many=True)
+        return Response(serializers.data)
+    
+    def post(self, request, format=None):
+        serializers = UserProfileSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+class ProjectsList(APIView):
+    permission_classes = (IsAdminOrReadOnly,)
+    def get(self,request,format=None):
+        all_projects = Projects.objects.all()
+        serializers = ProjectsSerializer(all_projects,many=True)
+        return Response(serializers.data)
+    
+    def post(self, request, format=None):
+        serializers = ProjectsSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
