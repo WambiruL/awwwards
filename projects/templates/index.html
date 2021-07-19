@@ -24,14 +24,18 @@
 
 <!--Navbar-->
 <nav class="nav2 navbar-expand-lg">
-    <a href="{%url 'logout'%}">Logout</a>
-    <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
 
     <div class="login">
-        <a href="{%url 'profile'%}">MY PROFILE</a>
+        {%if user.is_authenticated%}
+        <p>Hello,{{user.username}}</p>
+        <a href="{%url 'profile'%}"><button class="btn btn-secondary" style="position: relative; top: 30px; right: 110px; height: 30px;">VIEW YOUR PROFILE</button></a>
+        <p><a href="{%url 'logout'%}" style="position: relative; left: 900px;">Logout</a></p>
+        {%else%}
         <a href="{%url 'register'%}" style="position: relative; left: 40px;">Register</a>
         <a href="{%url 'login'%}"style="position: relative; left: 60px;">Login</a>
+        {%endif%}
     </div>
+    <a class="navbar-brand" style="color: black;" href="{%url 'index' %}"><img src="/static/Images/logo.png"></a>
     <a href="{%url 'new_project'%}"><button type="submit" class="btn btn-primary btn-sm">SUBMIT YOUR SITE</button></a>
 
 </nav>

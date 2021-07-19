@@ -20,10 +20,14 @@ h4{
     font-size: 15px;
 }
 .nav2{
-    background-color: whitesmoke;
+    background-color: powderblue;
     display: flex;
     justify-content: space-between;
     height: 70px;
+}
+.login{
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -38,7 +42,7 @@ img{
     text-align: center;
 }
 .intro{
-    background-image:url('./Images/775.jpeg');
+    background-image:url('https://picsum.photos/200/300/?blur');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -19,7 +19,7 @@ class ProfleUpdateForm(forms.ModelForm):
 
     class Meta:
         model=UserProfile
-        fields=['profile_image', 'bio', 'location']
+        fields=['profile_image', 'bio']
 
 class ProjectUploadForm(forms.ModelForm):
     class Meta:
