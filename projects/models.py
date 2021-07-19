@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from tinymce.models import HTMLField
 from url_or_relative_url_field.fields import URLOrRelativeURLField
+from django.core.validators import MaxValueValidator
 
 
 from django.db.models.signals import post_save
@@ -55,5 +56,12 @@ class Projects(models.Model):
     
     def __str__(self):
         return self.title
+
+class Rates(models.Model):
+    design = models.PositiveIntegerField(default=0,validators=[MaxValueValidator(10)])
+    usability = models.PositiveIntegerField(default=0,validators=[MaxValueValidator(10)])
+    content = models.PositiveIntegerField(default=0,validators=[MaxValueValidator(10)]) 
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    project = models.IntegerField(default=0) 
 
 

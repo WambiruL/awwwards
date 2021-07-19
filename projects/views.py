@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
-from .forms import CreateUserForm, UserUpdateForm,ProfleUpdateForm,ProjectUploadForm
+from .forms import CreateUserForm, UserUpdateForm,ProfleUpdateForm,ProjectUploadForm,VotesForm
 from django.contrib.auth.models import User
-from .models import UserProfile,Projects
+from .models import UserProfile,Projects, Rates
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from rest_framework import status
 from .permissions import IsAdminOrReadOnly
 from .serializer import UserProfileSerializer,ProjectsSerializer
+from django.http import Http404
+from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
 
 # Create your views here.
 def registerPage(request):
@@ -116,3 +118,27 @@ class ProjectsList(APIView):
             serializers.save()
             return Response(serializers.data, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def rating(request, pk):
+    
+    project = get_object_or_404(Projects, pk=pk)
+    current_user = request.user
+    if request.method == 'POST':
+        form = VotesForm(request.POST)
+        if form.is_valid():
+            design_rating = form.cleaned_data["design_rating"]
+            usability_rating = form.cleaned_data["usability_rating"]
+            content_rating = form.cleaned_data["content_rating"]
+            comment = form.cleaned_data["comment"]
+            rating = form.save(commit=False)
+            rating.project = project
+            rating.author = current_user
+            rating.design_rating = design_rating
+            rating.usability_rating = usability_rating
+            rating.content_rating = content_rating
+            rating.comment = comment
+            rating.save()
+            # return redirect('home')
+    else:
+        form = VotesForm()
+    return render(request,'rating.html', {'project' : project, 'form' : form})   

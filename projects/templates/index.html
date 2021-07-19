@@ -74,7 +74,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <small class="text-muted">Posted : {{project.pub_date|date:"F d,Y"}}</small>
                         </div>
-                        <a href=""><h5 class="strong-text"> <strong>{{project.title}}</strong> </h5> </a> <hr class="bg-info">
+                        <a href="{% url 'rating' %}"><h5 class="strong-text"> <strong>{{project.title}}</strong> </h5> </a> <hr class="bg-info">
                         <a href="{%url 'profile'%}"><h6>By:{{project.profile}}</h6></a>
                     </div>  
                 </div> 

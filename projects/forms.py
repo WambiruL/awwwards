@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import UserProfile, Projects
+from .models import UserProfile, Projects, Rates
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -25,3 +25,9 @@ class ProjectUploadForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = ('title','image_landing','description', 'link')
+
+class VotesForm(forms.ModelForm):
+    class Meta:
+        model = Rates
+        fields = ('design','usability','content')
+        

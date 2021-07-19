@@ -13,9 +13,7 @@ urlpatterns=[
     url(r'^search/',views.search_results,name='search_results'),
     url(r'^api/profile/$', views.UserProfileList.as_view()),
     url(r'^api/projects/$', views.ProjectsList.as_view()),
-    url(r'api/profile/profile-id/(?P<pk>[0-9]+)/$',views.UserProfileList.as_view()),
-    url(r'api/projects/projects-id/(?P<pk>[0-9]+)/$',views.ProjectsList.as_view()),
-
+    url(r'rating/<int:pk>/',views.rating,name='rating'),
     url(r'^$',views.index,name = 'index'),
     
    
